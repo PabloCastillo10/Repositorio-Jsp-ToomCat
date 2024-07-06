@@ -30,6 +30,7 @@ public class ProductoServlet extends HttpServlet {
         producto.add(Double.toString(precioProducto));
         
         req.setAttribute("producto", producto);
+        req.setAttribute("mensaje", "¡Producto agregado con exito!");
         getServletContext().getRequestDispatcher("/formulario-productos/formulario-productos.jsp").forward(req, resp);
         
         

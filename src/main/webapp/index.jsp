@@ -6,9 +6,10 @@
         <meta name="viewmport" content="width=device-width, initial-scale=1">
         <title>Sistema de gestion</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-         <nav class="possition-relative  navbar-dark bg-dark fixed-top">
+         <nav class="possition-relative navbar  navbar-dark bg-dark fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.jsp">Sistema de gestión de inventarios</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
@@ -26,6 +27,9 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="formulario-productos/formulario-productos.jsp">Formulario Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="formulario-productos/lista-productos.jsp">Lista Productos</a>
                 </li>
               </ul>
             </div>
