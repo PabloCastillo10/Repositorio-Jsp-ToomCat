@@ -9,7 +9,7 @@ public class JpaUtil {
         
     public static EntityManagerFactory buildEntityManagerFactory(){
         try{
-            return Persistence.createEntityManagerFactory("SGBDProductoIN5CM");
+            return Persistence.createEntityManagerFactory("SGBDProductosIN5CM");
         }catch(Exception e) {
             e.printStackTrace();
             throw new ExceptionInInitializerError(e);

@@ -1,4 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.List"%>
+<%@page import="org.pablocastillo.webapp.model.Producto"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -48,34 +50,21 @@
         </tr>
       </thead>
       <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td class="center">Mazda Cx5</td>
-            <td class="center">Mazda</td>
-            <td class="center">Camioneta familiar con motor 2.5 litros de 4 cilindros, 16 valvulas</td>
-            <td class="center"><img src="../assets/image/mazda.png" alt="mazda" width="150" height="110"></td>
-          </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td class="center">BMW F 850 GS</td>
-          <td class="center">BMW</td>
-          <td class="center">Motocicleta de doble proposito con motor bicilindico en paralelo</td>
-          <td class="center"><img src="../assets/image/bmw.webp" alt="bmw" width="150" height="110"></td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td class="center">Iphone 15</td>
-          <td class="center">Apple</td>
-          <td class="center">Iphone con 3 camaras y chip A17 Pro</td>
-          <td class="center"><img src="../assets/image/iphone15.jpg" alt="iphone 15" width="150" height="110"></td>
-        </tr>
-        <tr>
-          <th scope="row" class="centrado">4</th>
-          <td class="center">Samsung s24</td>
-          <td class="center">Samsung</td>
-          <td class="center">Pantalla: 6.2 1080 x 2340 pixels Procesador Snapdragon 8 Gen 3 for Galaxy 3.3GHz</td>
-          <td class="center"><img src="../assets/image/samsung1.png" alt="samsung" width="150" height="110"></td>
-        </tr>
+          <% List<Producto> productos = (List)request.getAttribute("productos"); %>
+          <% 
+                for(Producto producto:productos) {%>
+                <tr>
+                    <th scope="row"><%=producto.getProductoId()%></th>
+                    <<td><%=producto.getNombreProducto()%></td>
+                    <<td><%=producto.getMarcaProducto()%></td>
+                    <<td><%=producto.getDescripcionProducto()%></td>
+                    <<td><%=producto.getPrecio()%></td>
+                </tr>
+              <%}
+              
+              
+              
+          %>
       </tbody>
     </table>
         </div>
