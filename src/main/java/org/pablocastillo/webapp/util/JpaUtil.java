@@ -11,7 +11,6 @@ public class JpaUtil {
         try{
             return Persistence.createEntityManagerFactory("SGBDProductosIN5CM");
         }catch(Exception e) {
-            e.printStackTrace();
             throw new ExceptionInInitializerError(e);
         }
     }

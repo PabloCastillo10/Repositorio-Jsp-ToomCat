@@ -12,7 +12,7 @@ import java.util.List;
 import org.pablocastillo.webapp.model.Producto;
 import org.pablocastillo.webapp.service.ProductoService;
 
-@WebServlet("/producto-servlet/")
+@WebServlet("/producto-servlet")
 @MultipartConfig
 public class ProductoServlet extends HttpServlet {
 
@@ -27,7 +27,7 @@ public class ProductoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Producto> productos = ps.listarProductos();
         req.setAttribute("productos", productos);
-        req.getRequestDispatcher("/lista-producto/lista-productos.jsp").forward(req, resp);
+        req.getRequestDispatcher("/lista-productos/lista-productos.jsp").forward(req, resp);
     }
 
     
@@ -40,13 +40,12 @@ public class ProductoServlet extends HttpServlet {
         String nombreProducto = req.getParameter("nombreProducto");
         String descripcionProducto = req.getParameter("descripcionProducto");
         String marcaProducto = req.getParameter("marcaProducto");
-        double precioProducto = Double.parseDouble(req.getParameter("precioProducto"));
+        double precio = Double.parseDouble(req.getParameter("precioProducto"));
         producto.add(nombreProducto);
         producto.add(descripcionProducto);
         producto.add(marcaProducto);
-        producto.add(Double.toString(precioProducto));
+        producto.add(Double.toString(precio));
         req.setAttribute("producto", producto);
-        req.setAttribute("mensaje", "¡¡Producto agregado con exito :D!!");
         getServletContext().getRequestDispatcher("/formulario-productos/formulario-productos.jsp").forward(req, resp);
 
     

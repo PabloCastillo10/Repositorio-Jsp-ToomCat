@@ -1,6 +1,5 @@
 package org.pablocastillo.webapp.model;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,14 +9,12 @@ import jakarta.persistence.Table;
 @Table (name = "Productos")
 @Entity
 public class Producto {
-    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int productoId;
     private String nombreProducto;
     private String marcaProducto;
     private String descripcionProducto;
-    @Column(name= "precio")
     private Double precio;
 
     public Producto() {
@@ -28,6 +25,13 @@ public class Producto {
         this.nombreProducto = nombreProducto;
         this.marcaProducto = marcaProducto;
         this.descripcionProducto = descripcionProducto;
+        this.precio = precio;
+    }
+    
+    public Producto(String nombreProducto, String descripcionProducto, String marcaProducto, Double precio) {
+        this.nombreProducto = nombreProducto;
+        this.descripcionProducto = descripcionProducto;
+        this.marcaProducto = marcaProducto;
         this.precio = precio;
     }
 

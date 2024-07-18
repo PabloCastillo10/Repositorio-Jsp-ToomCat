@@ -1,11 +1,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import = "java.util.ArrayList" %>
-
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">  
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+              integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">  
         <title>JSP Page</title>
         
     </head>
@@ -24,10 +24,10 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="../index.jsp">Inicio</a>
+                  <a class="nav-link" aria-current="page" href="../index.jsp">Inicio</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="./formulario-productos.jsp">Form Productos</a>
+                  <a class="nav-link active" href="../formulario-productos/formulario-productos.jsp">Form Productos</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="../producto-servlet">Lista Productos</a>
@@ -37,8 +37,9 @@
           </div>
         </div>
     </nav>
-    
-    <div>
+        <br>
+        <br>
+        <div class="container mt-5 w-75">
             <% ArrayList<String> producto = (ArrayList)request.getAttribute("producto"); %>
             
             <%
@@ -60,7 +61,7 @@
         
         
     <div class="container-floating mt-5 w-75">
-        <form action="/FormProducto2023198/producto-servlet/" method="post" enctype="multipart/form-data">
+        <form action="/FormProducto2023198/producto-servlet" method="post" enctype="multipart/form-data">
                 <div class="form-floating mb-4">
             <input class="form-control" id="nombreProducto" name="nombreProducto" type="text">
             <label for="nombreProducto">Nombre de Producto</label>

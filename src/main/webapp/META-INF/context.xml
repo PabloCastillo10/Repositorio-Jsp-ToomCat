@@ -2,6 +2,6 @@
 <Context path="/FormProducto2023198">
     <Resource name="jdbc/SGBDProductosIN5CM" auth="Container" type="javax.sql.DataSource"
                maxTotal="100" maxIdle="30" maxWaitMillis="10000"
-               username="pabloCastillo" password="messi10" driverClassName="com.mysql.jdbc.Driver"
+               username="root" password="admin" driverClassName="com.mysql.jdbc.Driver"
                url="jdbc:mysql://localhost:3306/SGBDProductosIN5CM?serverTimezone=GMT-6"/>
 </Context>
